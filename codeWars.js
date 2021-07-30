@@ -276,40 +276,70 @@ Output: 1,4,13
 //         result.push(convertToHex(n))
 //     }
 //     return result.join('')
-
-
 // }
+
+
+// //=== convert to Hex ======> Number(10).toString(16)
 // function convertToHex(num) {
 //     if (num === 0) return "00";
-//     let result = [""];
-//     let hexValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
-
-//     let i = 0;
+//     let result = [];
+//     let hexValues =
+//         ["0", "1", "2", "3", "4", "5", "6",
+//             "7", "8", "9", "A", "B", "C", "D", "E", "F"];
 //     while (num > 0) {
-
 //         let reminder = num % 16;
-//         let targetValue = hexValues[reminder];
-//         // console.log(targetValue);
-//         if (typeof (result[i]) !== "string") {
-//             result[i] = new String();
-//         } else {
-//             result[i] += targetValue;
-//             continue;
-//         }
-//         // result.unshift(targetValue);
-//         // targetValue.length === 1
-//         //     ? result.unshift("0" + targetValue)
-//         //     : result.unshift(targetValue);
-
+//         result.unshift(hexValues[reminder]);
 //         num = Math.floor(num / 16);
-//         i++;
-
 //     }
-//     console.log(result);
+//     if (result.length === 1) result.unshift("0")
 //     return result.join('');
 // }
 
-// console.log(convertToHex(114));
+// console.log(rgb(5, 104, 4));
 
 
-// console.log(rgb(179, 13, 114));
+//-----------------------------//
+// function rgb(...arg) {
+//     return arg.map(n => {
+//         if (n < 0) n = 0;
+//         if (n > 255) n = 255;
+//         return ("0" + Number(n).toString(16)).slice(-2)
+//     }).join('').toUpperCase()
+// }
+
+// console.log(rgb(255, 104, 4));
+
+
+//===============================================================//
+ //**Roman Numerals Decoder
+
+// Create a function that takes a Roman numeral as its argument and returns 
+// its value as a numeric decimal integer.You don't need to validate 
+// the form of the Roman numeral.
+// Modern Roman numerals are written by 
+// expressing each decimal digit of the number to be encoded separately
+// , starting with the leftmost digit and skipping any 0s.
+// So 1990 is rendered "MCMXC"(1000 = M, 900 = CM, 90 = XC) and 2008 is rendered 
+// "MMVIII"(2000 = MM, 8 = VIII).The Roman numeral for 1666, 
+// "MDCLXVI", uses each letter in descending order.
+
+// 1990 --- "MCMXC"(1000 = M, 900 = CM, 90 = XC)
+// 2008 --- "MMVIII"(1000 = M, 900 = CM, 90 = XC)
+// 1666 --- "MDCLXVI"
+
+
+
+// Symbol    Value
+// I          1
+// V          5
+// X          10
+// L          50
+// C          100
+// D          500
+// M          1, 000
+
+
+
+
+
+/////solution('XXI'); // should return 21
