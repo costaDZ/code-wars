@@ -427,22 +427,17 @@ Output: 1,4,13
 //     let obj2 = {};
 //     array1.map(n => obj1[n ** 2] = (obj1[n ** 2] + 1) || 1);
 //     array2.map(n => obj2[n] = (obj2[n] + 1) || 1);
-//     for (let n in obj1) {
-//         if (obj2[n] !== obj1[n]) return false;
-//     }
+//     for (let n in obj1) if (obj2[n] !== obj1[n]) return false;
 //     return true;
-//}
-
+// }
 // function comp(a, b) {
 //     return !!a && !!b && a.map(x => x * x).sort().join() == b.sort().join();
 // }
 
-let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
-let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
+// let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
+// let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
 
 
-
-
-console.log(comp(a, b));
+// console.log(comp(a, b));
 
 
