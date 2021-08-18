@@ -339,9 +339,6 @@ Output: 1,4,13
 // M          1, 000
 
 
-
-
-
 /////solution('XXI'); // should return 21
 
 //===============================================================//
@@ -400,3 +397,59 @@ Output: 1,4,13
 
 
 //===============================================================//
+
+
+// ==========> (not complete) Are they the "same" ?
+
+// comp(a, b) returns true because in b 121 is the square of 11, 
+// 14641 is the square of 121, 20736 the square of 144, 361 
+// the square of 19, 25921 the square of 161, and so on.
+// It gets obvious if we write b's elements in terms of squares:
+
+
+// function comp(array1, array2) {
+//     if (array1.length !== array2.length) return false;
+//     if (!array2 || !array2) return false;
+//     let check1 = array1.map(item => array2.indexOf(item ** 2));
+//     let check2 = array2.map(item => array1.indexOf(item ** 2));
+//     console.log(check1);
+//     console.log(check2);
+
+//     return (!check1.includes(-1) || !check2.includes(-1)) ? true : false;
+// }
+
+// let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
+// let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
+
+
+function comp(array1, array2) {
+    // creat an empty obj
+    let obj = {}
+
+    // array1.map(n => obj[n] = (obj[n] + 1) || 0);
+
+    array1.forEach(n => {
+        if (n in obj) {
+            console.log(true);
+            obj[n] = obj[n] + 1;
+        } else {
+            obj[n] = 1;
+
+        }
+    });
+
+    console.log(obj);
+    // loop => add each n in arr1 ** 2  + repetition
+    // loop => add each n in sqrt(arr2) + repetition
+
+}
+
+let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
+let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
+
+
+
+
+console.log(comp(a, b));
+
+
