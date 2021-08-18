@@ -422,27 +422,20 @@ Output: 1,4,13
 // let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
 
 
-function comp(array1, array2) {
-    // creat an empty obj
-    let obj = {}
+// function comp(array1, array2) {
+//     let obj1 = {};
+//     let obj2 = {};
+//     array1.map(n => obj1[n ** 2] = (obj1[n ** 2] + 1) || 1);
+//     array2.map(n => obj2[n] = (obj2[n] + 1) || 1);
+//     for (let n in obj1) {
+//         if (obj2[n] !== obj1[n]) return false;
+//     }
+//     return true;
+//}
 
-    // array1.map(n => obj[n] = (obj[n] + 1) || 0);
-
-    array1.forEach(n => {
-        if (n in obj) {
-            console.log(true);
-            obj[n] = obj[n] + 1;
-        } else {
-            obj[n] = 1;
-
-        }
-    });
-
-    console.log(obj);
-    // loop => add each n in arr1 ** 2  + repetition
-    // loop => add each n in sqrt(arr2) + repetition
-
-}
+// function comp(a, b) {
+//     return !!a && !!b && a.map(x => x * x).sort().join() == b.sort().join();
+// }
 
 let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
 let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
