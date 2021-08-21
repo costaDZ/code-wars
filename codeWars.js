@@ -436,8 +436,80 @@ Output: 1,4,13
 
 // let a = [2, 2, 7, 0, 2, 2, 5, 8, 4, 2, 6, 5, 8, 5, 10, 8, 5];
 // let b = [36, 25, 4, 65, 64, 64, 4, 4, 0, 4, 16, 100, 25, 4, 49, 25, 25];
-
-
 // console.log(comp(a, b));
 
 
+//===============================================================//
+//  Write a function that will find all the anagrams of a word from a list.
+//  You will be given two inputs a word and an array with words. 
+//  You should return an array of all the anagrams or an empty array if there are none
+
+// function anagrams(str, arr) {
+//     let filterdArr = arr.filter(item => item.length === str.length);
+//     let result = arr.filter(val => {
+//         let check = val.split("").sort().join("");
+//         let target = str.split("").sort().join("");
+//         console.log(check, target);
+//         return check === target;
+//     });
+//     return result;
+// }
+
+// console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+
+
+//===============================================================//
+// Write a function that takes a string of parentheses, 
+// and determines if the order of the parentheses is valid.
+// The function should return true if the string is valid, and false if it's invalid.
+
+// function validParentheses(str) {
+//     if (!Number.isInteger(str.length / 2)) return false;
+//     if (str[0] === ")") return false;
+//     let collect = [];
+//     while (str.length) {
+//         let target = collect[collect.length - 1] === '(' ? ')' : '(';
+//         let ckeck = str.indexOf(target);
+//         if ((!(collect.length % 2) && str[0] === ")") || ckeck === -1) return false;
+//         collect.push(str[ckeck]);
+//         str = str.slice(0, ckeck) + str.slice(ckeck + 1);
+//     }
+//     return true;
+// }
+// console.log(validParentheses("()()()"));
+
+//----------GOOD SOLUTION--------------//
+// function validParentheses(parens) {
+//     var n = 0;
+//     for (var i = 0; i < parens.length; i++) {
+//         if (parens[i] == '(') n++;
+//         if (parens[i] == ')') n--;
+//         if (n < 0) return false;
+//     }
+//     return n == 0;
+// }
+//console.log(validParentheses("()))()"));
+
+//-----------------------------------//
+// function validParentheses(parens) {
+//     var stack = [],
+//         i;
+//     for (i = 0; i < parens.length; i++) {
+//         if (parens[i] === '(') {
+//             stack.push(parens[i]);
+//         }
+//         else if ('(' !== stack.pop()) {
+//             return false;
+//         }
+//     }
+//     return stack.length === 0;
+// }
+// console.log(validParentheses("(())"));
+
+//-----------------------------------//
+// function validParentheses(parens) {
+//     while (parens.indexOf('()') != -1) {
+//         parens = parens.replace('()', '');
+//     }
+// }
+// console.log(validParentheses("(()))"));
