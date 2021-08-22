@@ -34,7 +34,6 @@
 // function squareSum(arr) {
 //     return arr.reduce((acc, val) => acc += (val ** 2), 0)
 // }
-
 // console.log(squareSum([2, 2, 2]));
 
 
