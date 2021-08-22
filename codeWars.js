@@ -19,9 +19,7 @@
 
 //     return strArr.filter(i => i !== '_' && i !== '-').join("");
 // }
-
 // //let strArr = str.split(/-|_/g);
-
 // console.log(toCamelCase('The-Stealth-Warrior'));
 
 //==============================================================//
